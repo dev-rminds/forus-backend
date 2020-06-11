@@ -24,8 +24,7 @@ class ProviderRejectedMail extends ImplementationMail
         string $phone_number,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom               = $emailFrom;
         $this->fundName                = $fund_name;
         $this->providerName            = $provider_name;
         $this->sponsorName             = $sponsor_name;

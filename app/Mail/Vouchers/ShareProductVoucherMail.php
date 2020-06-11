@@ -24,8 +24,7 @@ class ShareProductVoucherMail extends ImplementationMail
         string $reason,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->requesterMail = $requesterMail;
         $this->productName = $productName;
         $this->qrToken = $qrToken;

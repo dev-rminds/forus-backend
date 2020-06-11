@@ -20,8 +20,7 @@ class ForusFundCreated extends ImplementationMail
         string $organizationName,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fundName;
         $this->organizationName = $organizationName;
     }

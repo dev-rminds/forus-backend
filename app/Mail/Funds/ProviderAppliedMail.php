@@ -25,7 +25,7 @@ class ProviderAppliedMail extends ImplementationMail
         string $sponsor_dashboard_link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
+        $this->emailFrom                = $emailFrom;
         $this->provider_name            = $provider_name;
         $this->sponsor_name             = $sponsor_name;
         $this->fund_name                = $fund_name;

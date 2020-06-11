@@ -20,8 +20,7 @@ class EmailActivationMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->platform = $platform;
         $this->link = $link;
     }

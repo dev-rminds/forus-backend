@@ -28,8 +28,7 @@ class EmployeeAddedMail extends ImplementationMail
         string $confirmationLink,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->orgName = $orgName;
         $this->platform = $platform;
         $this->confirmationLink = $confirmationLink;

@@ -28,8 +28,7 @@ class FundStatisticsMail extends ImplementationMail
         string $totalAmount,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fundName;
         $this->sponsorName = $sponsorName;
         $this->sponsorAmount = $sponsorAmount;

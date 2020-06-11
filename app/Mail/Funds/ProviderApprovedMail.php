@@ -24,8 +24,7 @@ class ProviderApprovedMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fundName;
         $this->providerName = $providerName;
         $this->sponsorName = $sponsorName;
@@ -43,5 +42,4 @@ class ProviderApprovedMail extends ImplementationMail
                 'provider_dashboard_link'    => $this->link
             ]);
     }
-
 }

@@ -30,8 +30,7 @@ class ProductReservedUserMail extends ImplementationMail
         string $expireAtMinus1Day,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->productName = $productName;
         $this->productPrice = $productPrice;
         $this->provider_organization_name = $providerOrganizationName;

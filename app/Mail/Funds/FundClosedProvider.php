@@ -34,8 +34,7 @@ class FundClosedProvider extends ImplementationMail
         $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName     = $fundName;
         $this->fundEndDate  = $fundEndDate;
         $this->providerName = $providerName;

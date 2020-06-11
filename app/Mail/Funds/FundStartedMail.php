@@ -20,10 +20,9 @@ class FundStartedMail extends ImplementationMail
         string $sponsor_name,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
-        $this->fund_name     = $fund_name;
-        $this->sponsor_name  = $sponsor_name;
+        $this->emailFrom    = $emailFrom;
+        $this->fund_name    = $fund_name;
+        $this->sponsor_name = $sponsor_name;
     }
 
     public function build(): Mailable

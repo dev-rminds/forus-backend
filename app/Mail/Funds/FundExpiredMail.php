@@ -30,8 +30,7 @@ class FundExpiredMail extends ImplementationMail
         string $shopImplementationUrl,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fundName;
         $this->sponsorName = $sponsorName;
         $this->startDateFund = $startDateFund;

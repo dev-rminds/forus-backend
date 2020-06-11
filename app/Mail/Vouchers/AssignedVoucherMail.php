@@ -31,8 +31,7 @@ class AssignedVoucherMail extends ImplementationMail
         string $voucher_expire_minus_day,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fund_name;
         $this->qrToken = $qrToken;
         $this->voucher_amount = $voucher_amount;

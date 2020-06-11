@@ -22,8 +22,7 @@ class FundRequestResolvedMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-        $this->requestStatus = $requestStatus;
+        $this->emailFrom = $emailFrom;        $this->requestStatus = $requestStatus;
         $this->fundName = $fundName;
         $this->link = $link;
     }

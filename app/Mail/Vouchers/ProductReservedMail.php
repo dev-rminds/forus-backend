@@ -20,8 +20,7 @@ class ProductReservedMail extends ImplementationMail
         string $expirationDate,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->productName = $productName;
         $this->expirationDate = $expirationDate;
     }

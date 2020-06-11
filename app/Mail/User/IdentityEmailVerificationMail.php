@@ -20,8 +20,7 @@ class IdentityEmailVerificationMail extends ImplementationMail
      * @param EmailFrom $emailFrom
      */
     public function __construct(string $link, ?EmailFrom $emailFrom) {
-        parent::__construct($emailFrom);
-        $this->link = $link;
+        $this->emailFrom = $emailFrom;        $this->link = $link;
     }
 
     /**

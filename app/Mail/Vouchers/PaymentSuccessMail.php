@@ -20,8 +20,7 @@ class PaymentSuccessMail extends ImplementationMail
         string $currentBudget,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fundName;
         $this->currentBudget = $currentBudget;
     }

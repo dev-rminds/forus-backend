@@ -27,8 +27,7 @@ class SendVoucherMail extends ImplementationMail
         string $voucher_expire_minus_day,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fund_name;
         $this->fund_product_name = $fund_product_name;
         $this->qrToken = $qrToken;

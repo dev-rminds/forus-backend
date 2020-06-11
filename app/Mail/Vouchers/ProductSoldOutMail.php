@@ -21,8 +21,7 @@ class ProductSoldOutMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ){
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->productName = $productName;
         $this->link = $link;
     }

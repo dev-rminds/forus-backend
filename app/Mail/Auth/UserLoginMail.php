@@ -27,8 +27,7 @@ class UserLoginMail extends ImplementationMail
         string $source,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $platform = '';
 
         if (strpos($source, '_webshop') !== false) {

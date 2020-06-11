@@ -22,8 +22,7 @@ class FundRequestRecordDeclinedMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-        $this->rejectionNote = $rejectionNote;
+        $this->emailFrom = $emailFrom;        $this->rejectionNote = $rejectionNote;
         $this->fundName = $fundName;
         $this->link = $link;
     }

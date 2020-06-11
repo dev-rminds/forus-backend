@@ -26,8 +26,7 @@ class FundBalanceWarningMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fund_name;
         $this->sponsorName = $sponsor_name;
         $this->notificationAmount = $notification_amount;

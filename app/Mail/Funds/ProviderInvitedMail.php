@@ -35,7 +35,7 @@ class ProviderInvitedMail extends ImplementationMail
         string $invitation_link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
+        $this->emailFrom                = $emailFrom;
         $this->provider_name            = $provider_name;
         $this->sponsor_name             = $sponsor_name;
         $this->sponsor_phone            = $sponsor_phone;

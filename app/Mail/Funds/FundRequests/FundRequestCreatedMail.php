@@ -20,8 +20,7 @@ class FundRequestCreatedMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-        $this->fundName = $fundName;
+        $this->emailFrom = $emailFrom;        $this->fundName = $fundName;
         $this->link = $link;
     }
 
