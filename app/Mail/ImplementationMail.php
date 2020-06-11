@@ -30,9 +30,9 @@ class ImplementationMail extends Mailable
     }
 
     /**
-     * @return ImplementationMail
+     * @return Mailable
      */
-    public function build(): ImplementationMail
+    public function buildBase(): Mailable
     {
         return $this->from(
             $this->emailFrom->getEmail(),

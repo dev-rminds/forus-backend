@@ -4,6 +4,7 @@ namespace App\Mail\Funds;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundClosed
@@ -36,8 +37,7 @@ class FundClosed extends ImplementationMail
         $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName     = $fundName;
         $this->link         = $link;
         $this->fundEndDate  = $fundEndDate;
@@ -50,9 +50,9 @@ class FundClosed extends ImplementationMail
      *
      * @return $this
      */
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_closed.title', [
                 'fund_name' => $this->fundName
             ]))

@@ -4,6 +4,7 @@ namespace App\Mail\Auth;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class UserLoginMail
@@ -26,8 +27,7 @@ class UserLoginMail extends ImplementationMail
         string $source,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $platform = '';
 
         if (strpos($source, '_webshop') !== false) {
@@ -48,9 +48,9 @@ class UserLoginMail extends ImplementationMail
         $this->platform = $platform;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('login_via_email.subject_title', [
                 'platform' => $this->platform,
 		        'time' => date('H:i', strtotime('1 hour'))

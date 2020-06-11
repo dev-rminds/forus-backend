@@ -5,6 +5,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 class AssignedVoucherMail extends ImplementationMail
 {
@@ -30,8 +31,7 @@ class AssignedVoucherMail extends ImplementationMail
         string $voucher_expire_minus_day,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->fundName = $fund_name;
         $this->qrToken = $qrToken;
         $this->voucher_amount = $voucher_amount;
@@ -43,9 +43,9 @@ class AssignedVoucherMail extends ImplementationMail
      *
      * @return $this
      */
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('voucher_assigned.title', [
                 'fund_name' => $this->fundName
             ]))

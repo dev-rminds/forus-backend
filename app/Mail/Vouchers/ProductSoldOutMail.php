@@ -5,6 +5,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class ProductSoldOutMail
@@ -20,15 +21,14 @@ class ProductSoldOutMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ){
-        parent::__construct($emailFrom);
-
+        $this->emailFrom = $emailFrom;
         $this->productName = $productName;
         $this->link = $link;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('product_sold_out.title', [
                 'product_name' => $this->productName
             ]))

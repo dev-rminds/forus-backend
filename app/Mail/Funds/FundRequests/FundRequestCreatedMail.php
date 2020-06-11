@@ -4,6 +4,7 @@ namespace App\Mail\FundRequests;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundRequestCreatedMail
@@ -19,14 +20,13 @@ class FundRequestCreatedMail extends ImplementationMail
         string $link,
         ?EmailFrom $emailFrom
     ) {
-        parent::__construct($emailFrom);
-        $this->fundName = $fundName;
+        $this->emailFrom = $emailFrom;        $this->fundName = $fundName;
         $this->link = $link;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_request_created.title', ['fund_name' => $this->fundName]))
             ->view('emails.funds.fund-requests.fund_request-created', [
                 'fund_name' => $this->fundName,
