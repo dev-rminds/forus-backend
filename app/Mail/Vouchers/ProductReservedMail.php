@@ -4,6 +4,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class ProductReservedMail
@@ -25,7 +26,7 @@ class ProductReservedMail extends ImplementationMail
         $this->expirationDate = $expirationDate;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('product_bought.title', [

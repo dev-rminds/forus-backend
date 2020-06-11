@@ -4,6 +4,7 @@ namespace App\Mail\Funds;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class BalanceWarningMail
@@ -34,7 +35,7 @@ class FundBalanceWarningMail extends ImplementationMail
         $this->link = $link;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('balance_warning.title', ['fund_name' => $this->fundName]))

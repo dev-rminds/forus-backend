@@ -5,6 +5,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 class AssignedVoucherMail extends ImplementationMail
 {
@@ -43,7 +44,7 @@ class AssignedVoucherMail extends ImplementationMail
      *
      * @return $this
      */
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('voucher_assigned.title', [

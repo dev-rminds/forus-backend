@@ -4,6 +4,7 @@ namespace App\Mail\Funds\Forus;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundCreatedMail
@@ -25,7 +26,7 @@ class ForusFundCreated extends ImplementationMail
         $this->organizationName = $organizationName;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('forus/fund_created.title', [

@@ -4,6 +4,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundStatisticsMail
@@ -37,7 +38,7 @@ class FundStatisticsMail extends ImplementationMail
         $this->totalAmount = $totalAmount;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('fund_statistics.title', [

@@ -4,6 +4,7 @@ namespace App\Mail\Funds;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundStartedMail
@@ -25,7 +26,7 @@ class FundStartedMail extends ImplementationMail
         $this->sponsor_name  = $sponsor_name;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('fund_started.title', [

@@ -5,6 +5,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class VoucherMail
@@ -35,7 +36,7 @@ class SendVoucherMail extends ImplementationMail
         $this->voucher_expire_minus_day = $voucher_expire_minus_day;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('voucher_sent.title', [

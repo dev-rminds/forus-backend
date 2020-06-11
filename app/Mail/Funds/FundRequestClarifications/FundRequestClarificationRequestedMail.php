@@ -4,6 +4,7 @@ namespace App\Mail\FundRequests;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class FundRequestCreatedMail
@@ -30,7 +31,7 @@ class FundRequestClarificationRequestedMail extends ImplementationMail
         $this->link = $link;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('fund_request_clarification_requested.title', ['fund_name' => $this->fundName]))

@@ -4,6 +4,7 @@ namespace App\Mail\Funds;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class ProviderRejectedMail
@@ -30,7 +31,7 @@ class ProviderRejectedMail extends ImplementationMail
         $this->sponsorName             = $sponsor_name;
         $this->phoneNumber             = $phone_number;
     }
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('provider_rejected.title'))

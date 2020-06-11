@@ -4,6 +4,7 @@ namespace App\Mail\User;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class EmailActivationMail
@@ -26,7 +27,7 @@ class IdentityEmailVerificationMail extends ImplementationMail
     /**
      * @return ImplementationMail
      */
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('identity_email_verification.title'))

@@ -4,6 +4,7 @@ namespace App\Mail\User;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 class EmployeeAddedMail extends ImplementationMail
 {
@@ -40,7 +41,7 @@ class EmployeeAddedMail extends ImplementationMail
      *
      * @return $this
      */
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('email_employee.title', [

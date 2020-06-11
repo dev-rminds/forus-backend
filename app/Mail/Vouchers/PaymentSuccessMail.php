@@ -4,6 +4,7 @@ namespace App\Mail\Vouchers;
 
 use App\Mail\ImplementationMail;
 use App\Services\Forus\Notification\EmailFrom;
+use Illuminate\Mail\Mailable;
 
 /**
  * Class PaymentSuccessMail
@@ -25,7 +26,7 @@ class PaymentSuccessMail extends ImplementationMail
         $this->currentBudget = $currentBudget;
     }
 
-    public function build(): ImplementationMail
+    public function build(): Mailable
     {
         return parent::build()
             ->subject(mail_trans('payment_success.title', [
