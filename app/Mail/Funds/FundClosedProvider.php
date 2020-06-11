@@ -44,7 +44,7 @@ class FundClosedProvider extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_closed_provider.title', [
                 'fund_name' => $this->fundName
             ]))

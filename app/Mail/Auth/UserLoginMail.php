@@ -51,7 +51,7 @@ class UserLoginMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('login_via_email.subject_title', [
                 'platform' => $this->platform,
 		        'time' => date('H:i', strtotime('1 hour'))

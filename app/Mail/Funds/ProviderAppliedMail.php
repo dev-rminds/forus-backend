@@ -34,7 +34,7 @@ class ProviderAppliedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('provider_applied.title', [
                 'provider_name' => $this->provider_name,
                 'fund_name' => $this->fund_name

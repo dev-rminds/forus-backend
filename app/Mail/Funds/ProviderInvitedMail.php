@@ -49,7 +49,7 @@ class ProviderInvitedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('provider_invitation.title', [
                 'sponsor_name' => $this->sponsor_name,
                 'fund_name' => $this->fund_name

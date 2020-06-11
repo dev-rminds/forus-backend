@@ -53,7 +53,7 @@ class FundExpiredMail extends ImplementationMail
             'shop_implementation_url' => $this->shopImplementationUrl
         ];
 
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_expires.title', $data))
             ->view('emails.funds.fund_expires', $data);
     }

@@ -29,7 +29,7 @@ class ProductSoldOutMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('product_sold_out.title', [
                 'product_name' => $this->productName
             ]))

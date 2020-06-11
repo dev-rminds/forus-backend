@@ -28,7 +28,7 @@ class FundStartedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_started.title', [
                 'fund_name' => $this->fund_name
             ]))

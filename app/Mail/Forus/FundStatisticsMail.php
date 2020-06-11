@@ -40,7 +40,7 @@ class FundStatisticsMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_statistics.title', [
                 'sponsor_name' => $this->sponsorName,
                 'fund_name' => $this->fundName

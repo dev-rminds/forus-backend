@@ -46,7 +46,7 @@ class AssignedVoucherMail extends ImplementationMail
      */
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('voucher_assigned.title', [
                 'fund_name' => $this->fundName
             ]))

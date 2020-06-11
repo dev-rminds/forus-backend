@@ -34,7 +34,7 @@ class ShareProductVoucherMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('share_product.title', [
                 'requester_email' => $this->requesterMail
             ]))

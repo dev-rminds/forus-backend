@@ -28,7 +28,7 @@ class ProductReservedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('product_bought.title', [
                 'product_name' => $this->productName
             ]))

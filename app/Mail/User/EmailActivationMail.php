@@ -28,7 +28,7 @@ class EmailActivationMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('email_activation.title'))
             ->view('emails.user.email_activation', [
                 'link' => $this->link

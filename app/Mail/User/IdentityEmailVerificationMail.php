@@ -29,7 +29,7 @@ class IdentityEmailVerificationMail extends ImplementationMail
      */
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('identity_email_verification.title'))
             ->view('emails.identity-email-verification', [
                 'link' => $this->link

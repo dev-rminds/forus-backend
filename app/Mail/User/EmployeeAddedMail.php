@@ -43,7 +43,7 @@ class EmployeeAddedMail extends ImplementationMail
      */
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('email_employee.title', [
                 'orgName' => $this->orgName
             ]))

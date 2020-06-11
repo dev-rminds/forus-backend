@@ -34,7 +34,7 @@ class ProviderApprovedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('provider_approved.title'))
             ->view('emails.funds.provider_approved', [
                 'fund_name'                 => $this->fundName,

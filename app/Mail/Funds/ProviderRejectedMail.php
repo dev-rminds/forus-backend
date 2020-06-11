@@ -33,7 +33,7 @@ class ProviderRejectedMail extends ImplementationMail
     }
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('provider_rejected.title'))
             ->view('emails.funds.provider_rejected', [
                 'fund_name'                 => $this->fundName,

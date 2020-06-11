@@ -38,7 +38,7 @@ class SendVoucherMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('voucher_sent.title', [
                 'fund_name' => $this->fundName
             ]))

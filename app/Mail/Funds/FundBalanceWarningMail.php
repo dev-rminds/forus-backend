@@ -37,7 +37,7 @@ class FundBalanceWarningMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('balance_warning.title', ['fund_name' => $this->fundName]))
             ->view('emails.funds.balance_warning', [
                 'fund_name' => $this->fundName,

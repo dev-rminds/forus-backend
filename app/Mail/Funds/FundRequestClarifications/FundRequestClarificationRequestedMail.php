@@ -33,7 +33,7 @@ class FundRequestClarificationRequestedMail extends ImplementationMail
 
     public function build(): Mailable
     {
-        return parent::build()
+        return $this->buildBase()
             ->subject(mail_trans('fund_request_clarification_requested.title', ['fund_name' => $this->fundName]))
             ->view('emails.funds.fund-request-clarifications.fund_request-clarification-requested', [
                 'fund_name' => $this->fundName,
